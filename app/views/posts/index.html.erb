@@ -1,0 +1,12 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<%= link_to('Create new post', 'posts/new', html_options = {class:'newpost'}) %>
+
+<ul>
+<% @posts.each do |post| %>
+	<li>
+		<%= post.content %>
+	</li>
+<% end %>
+</ul>
