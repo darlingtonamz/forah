@@ -3,10 +3,10 @@
 
 <%= link_to('Create new post', 'posts/new', html_options = {class:'newpost'}) %>
 
-<ul>
-<% @posts.each do |post| %>
-	<li>
-		<%= post.content %>
-	</li>
-<% end %>
-</ul>
+<div class="container center">
+	
+		<% @posts.each do |post| %>
+			<%= render partial: 'card', locals:{post: post} %>
+		<% end %>
+
+</div>

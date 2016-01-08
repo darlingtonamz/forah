@@ -1,0 +1,18 @@
+	<div class="card">
+		
+		<div class="cmain">
+			<div id="ctop" class="row">
+				<div id="ctitle" class="col-xs-8">
+					<%= link_to(post.title,  {action:'show', id: post.id}) %>					
+				</div>
+				<div id="cscore" class="col-xs-4">
+					<%= post.vote_count %> up | <%= post.favorite_count %> heart
+				</div>
+			</div>
+			<div id="cbottom"><%= post.content %></div>
+		</div>
+		<div class="cbase">
+			<div>by <%= User.find(post.user_id).name %></div>
+			<div></div>
+		</div>
+	</div>

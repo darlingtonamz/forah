@@ -1,3 +1,76 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body{
+	background-color: #d5d5d5;
+	color: #9e9e9e;
+}
+
+.container{
+	max-width: 800px
+}
+
+.center{
+	margin: auto;
+}
+
+#ctitle{
+	font-size: 20px;
+	overflow: hidden;
+}
+#cscore{
+	text-align: right;
+}
+
+#cbottom{
+	margin-top: 10px;
+}
+
+.cbase{
+	background: #23307B;
+	color: white;
+	margin: 0 -1.5rem -1.5rem;
+	padding: 3px 1.5rem;
+	border-radius: 0 0 3px 3px;
+}
+
+
+
+
+.card {
+  padding:1.5rem;
+  box-shadow:0 1px 2px #aaa;
+  max-width: 600px;
+  background:white;
+  margin:0 auto 1rem auto;
+  border-radius:3px;
+  user-select:none;
+  animation:fly-in-from-left .5s 1s ease both;
+  transform-origin:top left;  
+  transition: all 0.2s ease;
+}
+.card:nth-child(even){
+  animation-name:fly-in-from-right;
+  animation-delay:1.1s;
+ transform-origin:top right;
+}
+
+@keyframes fly-in-from-left {
+  from {
+    transform:translateY(15rem) rotate(15deg);
+    opacity:0;
+  }
+}
+
+@keyframes fly-in-from-right {
+  from {
+    transform:translateY(15rem) rotate(-15deg);
+    opacity:0;
+  }
+}
+
+.card:hover{
+  -webkit-box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	-moz-box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
