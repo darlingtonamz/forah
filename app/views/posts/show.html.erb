@@ -1,9 +1,4 @@
-<h1>Show</h1>
-<%= @favorites.size %> stars, <%= @votes.size %> likes, <br>
-written by <%= @user.name.capitalize%>.
-<div id="showTitle">
-	<%= @post.title %>
-</div>
-<div id="showContent">
-	<%= @post.content %>
+
+<div class='container'>
+	<%= render partial: 'card', locals:{post: @post} %>
 </div>
