@@ -13,6 +13,12 @@ class PostsController < ApplicationController
   	@post = Post.new(post_params)
   	@post.user_id = 1
 
+    categories = category_params
+
+    categories.each do |c|
+      @post.categories << Category.find_by_id(c)
+    end
+
   	if @post.save
   		redirect_to(action: 'index')
   	else
@@ -32,6 +38,10 @@ class PostsController < ApplicationController
   	def post_params
   		params.require(:post).permit(:title, :content)
   	end
+
+    def category_params
+      params.require(:post).permit(:category_ids)
+    end
 
   	def authenticate_user
 	    unless current_user

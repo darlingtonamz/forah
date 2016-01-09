@@ -6,7 +6,10 @@
 					<%= link_to(post.title,  {action:'show', id: post.id}) %>					
 				</div>
 				<div id="cscore" class="col-xs-4">
-					<%= post.vote_count %> up | <%= post.favorite_count %> heart
+					<%= post.vote_count %>
+					<%= image_tag('up.png')%> 
+					<%= post.favorite_count  %>
+					<%= link_to image_tag('heart.png'), favorities_path(post_id: post.id), method: :post, remote: true %>
 				</div>
 			</div>
 			<div id="cbottom"><%= post.content %></div>

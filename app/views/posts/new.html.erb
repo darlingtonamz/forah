@@ -1,10 +1,21 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="container">
+	<div class="card">
+		<h1>Posts#new</h1>
+		<p>Find me in app/views/posts/new.html.erb</p>
 
-<%= form_for :post, url:{action:'create'} do |f| %>
-	
-	<%= f.text_field(:title, placeholder: 'title') %><br>
-	<%= f.text_area(:content, placeholder: "What's on your mind?") %><br>
-	<%= submit_tag('submit') %>
+		<%= form_for :post, url:{action:'create'} do |f| %>
+			
+			<%= f.text_field(:title, placeholder: 'title') %><br>
+			<div class="field">
+				<% Category.all.each do |category| %>
+					<%= check_box_tag "post[category_ids][]", category.id, false, id: dom_id(category) %>
+					<%= label_tag dom_id(category), category.name %>
+				<% end %>
+			</div>
 
-<% end %>
+			<%= f.text_area(:content, placeholder: "What's on your mind?") %><br>
+			<%= submit_tag('submit') %>
+
+		<% end %>
+	</div>
+</div>
