@@ -24,5 +24,4 @@ test:
   database: forah_test
 
 production:
-  <<: *default
   database: <%= ENV['DATABASE_URL'] %>
